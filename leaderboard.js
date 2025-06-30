@@ -1,3 +1,4 @@
+
 // Leaderboard functionality
 class LeaderboardManager {
     constructor() {
@@ -167,6 +168,29 @@ function updateTimeFilter() {
     const timeFilter = document.getElementById('timeFilter').value;
     leaderboardManager.currentTimeFilter = timeFilter;
     leaderboardManager.updateLeaderboard();
+}
+
+// --- ADMIN FUNCTIONS ---
+function resetLeaderboardData() {
+    const confirmation = confirm(
+        'Are you sure you want to reset all data?\n\n' +
+        'This will delete all stores and transactions and cannot be undone. ' +
+        'The application will return to its initial demo state.'
+    );
+
+    if (confirmation) {
+        // Clear all relevant data from localStorage
+        localStorage.removeItem('ecomLeaderStores');
+        localStorage.removeItem('ecomLeaderTransactions');
+        localStorage.removeItem('ecomLeaderboardTracking');
+        
+        // Clear the currently logged-in user from sessionStorage to force logout
+        sessionStorage.removeItem('currentStoreId');
+        
+        // Alert the user and redirect to the home page to re-initialize the app
+        alert('All data has been reset. The application will now reload.');
+        window.location.href = 'index.html';
+    }
 }
 
 // Initialize leaderboard when the DOM is fully loaded
