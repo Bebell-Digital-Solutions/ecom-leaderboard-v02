@@ -127,10 +127,15 @@ body {
 }
 
 .activity-item .lucide-icon,
-.integration-card h3 .lucide-icon {
+.integration-card h3 .lucide-icon,
+.admin-section h3 .lucide-icon {
     color: var(--primary-color);
     width: 20px;
     height: 20px;
+}
+
+.admin-section h3 .lucide-icon {
+    color: var(--error-color);
 }
 
 .connection-test .lucide-icon {
@@ -233,6 +238,19 @@ body {
 .btn-secondary:hover {
   background: var(--border-color);
 }
+
+.btn-danger {
+    background: var(--error-color);
+    color: white;
+    width: auto;
+}
+
+.btn-danger:hover {
+    background: #cc2f2f;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
 
 /* Dashboard */
 .dashboard-section {
@@ -507,9 +525,8 @@ body {
   justify-content: center;
   align-items: flex-end;
   gap: 30px;
-  margin-bottom: 140px;
-  padding: 40px 20px 40px 20px;
-  
+  margin-bottom: 40px;
+  padding: 40px 20px 0 20px;
   background: var(--bg-primary);
   border-radius: 16px;
   box-shadow: var(--shadow-lg);
@@ -679,7 +696,7 @@ body {
   color: var(--error-color);
 }
 
-/* Join Section */
+/* Join & Admin Section */
 .join-section {
   margin-top: 40px;
   text-align: center;
@@ -710,6 +727,18 @@ body {
 .join-card .btn {
   width: auto;
   padding: 12px 32px;
+}
+
+.admin-section {
+    border: 2px solid var(--error-color);
+}
+
+.admin-section h3 {
+    color: var(--error-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 /* Animations */
